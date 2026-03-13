@@ -1,11 +1,7 @@
 import express, { Request, Response } from 'express';
 import PortfolioItem from '../models/PortfolioItem';
 import Planner from '../models/Planner';
-import { verifyToken, requireRole } from '../middlewares/auth';
-
-interface AuthRequest extends Request {
-  user?: { userId: string; email: string; role: string };
-}
+import { verifyToken, requireRole, AuthRequest } from '../middlewares/auth';
 
 const router = express.Router();
 
